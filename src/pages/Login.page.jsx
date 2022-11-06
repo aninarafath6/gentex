@@ -5,8 +5,8 @@ import GoogleIcon from "../assets/images/Google.png";
 import authController from "../controllers/user/authController";
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -87,3 +87,4 @@ function LoginPage() {
 }
 
 export default LoginPage;
+;
