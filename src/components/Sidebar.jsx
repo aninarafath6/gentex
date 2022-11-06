@@ -9,6 +9,7 @@ import invoiceIcon from "../assets/icons/Invoices.svg";
 import wallet from "../assets/icons/My Wallets.svg";
 import settings from "../assets/icons/Settings.svg";
 import transactions from "../assets/icons/Transactions.svg";
+import lmi from "../assets/icons/lmi.svg";
 
 function SideBar() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -21,8 +22,10 @@ function SideBar() {
   ];
 
   return (
-    <div className="left-section w-3/12 h-screen bg-gray-100 px-5 py-7">
-      <img src={Logo} width="180" alt="" className="mb-5" />
+    <div className="left-section xl:w-2/12 h-screen bg-gray-100 px-5 py-7 md:block hidden items-center justify-center">
+      <img src={Logo} width="180" alt="" className="mb-5 hidden xl:block" />
+      <img src={lmi} width="50" alt="" className=" mb-5  xl:hidden" />
+
       <div className="h-3"></div>
 
       <div className="flex  flex-col justify-between h-5/6">
