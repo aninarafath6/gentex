@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/header";
+import Header from "../components/Header";
 
-import SideBar from "../components/Sidebar";
+import SideBar from "../components/SideBar";
 
 function SuperAdminPage() {
   return (
