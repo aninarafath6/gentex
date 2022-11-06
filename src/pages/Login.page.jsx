@@ -2,23 +2,17 @@ import React, { useState } from "react";
 import LoginImage from "../assets/images/left.jpg";
 import Logo from "../assets/images/logo.png";
 import GoogleIcon from "../assets/images/Google.png";
-import httpClient from "../utils/api"
+import authController from "../controllers/user/authController";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(false);
 
   const submitForm = (e) => {
     e.preventDefault();
-    httpClient.post("/auth/login",{
-        email, password
-    }).then((res)=>{
-        console.log(res.data)
-    }).catch((error)=>{
-        console.log(error)
-        setErrorMessage(error.response.data.errors[0] || error.response.data.message || "something went wrong")
-    })
+    authController.doLogin({ email, password }).then((res) => {
+      console.log(res);
+    });
   };
 
   return (
@@ -67,13 +61,6 @@ function LoginPage() {
               className=" text-slate-600 focus:border-red-400-500  w-full px-3 placeholder:text-slate-400 rounded-xl py-3 mt-2 border border-grey"
             />
           </div>
-          <div className="mt-3">
-            {errorMessage && (
-              <p className="text-sm text-red-800">
-                {errorMessage || "something went wrong"}
-              </p>
-            )}
-          </div>
           <div className="mt-5">
             <input
               type={"submit"}
@@ -86,12 +73,14 @@ function LoginPage() {
                         <hr className='h-2 mt-9 w-full' />
                         <p>Or</p>
                     </div> */}
+          <button
+            type="submit"
+            className="mt-4 bg-white border  py-3 px-20 items-center justify-center text-gray-600 font-medium rounded-xl flex  gap-3"
+          >
+            <img src={GoogleIcon} width="30" alt="" />
+            <p>Sign in with google</p>
+          </button>
         </form>
-
-        <button className="mt-4 bg-white border  py-3 px-20 items-center justify-center text-gray-600 font-medium rounded-xl flex  gap-3">
-          <img src={GoogleIcon} width="30" alt="" />
-          <p>Sign in with google</p>
-        </button>
       </div>
     </div>
   );

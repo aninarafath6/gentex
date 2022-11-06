@@ -8,7 +8,7 @@ const instance = axios.create({
 });
 instance.interceptors.request.use(
   (config) => {
-    const token = storageService.getLocalAccessToken();
+    const token = storageService.getLocalToken();
     const username = storageService.getUserName();
     if (token) {
       config.headers["Authorization"] = "Bearer " + token;
@@ -32,22 +32,23 @@ instance.interceptors.response.use(
       // Access Token was expired
       if (err.response.status === 403 && !originalConfig._retry) {
         originalConfig._retry = true;
-        try {
-          const rs = await instance.post(
-            "/auth/token",
-            {
-              refreshToken: storageService.getLocalRefreshToken(),
-            },
-            {
-              username: storageService.getUserName(),
-            }
-          );
-          const { accessToken } = rs.data;
-          storageService.updateLocalAccessToken(accessToken);
-          return instance(originalConfig);
-        } catch (_error) {
-          return Promise.reject(_error);
-        }
+        
+        // try {
+        //   const rs = await instance.post(
+        //     "/auth/token",
+        //     {
+        //       refreshToken: storageService.getLocalRefreshToken(),
+        //     },
+        //     {
+        //       username: storageService.getUserName(),
+        //     }
+        //   );
+        //   const { accessToken } = rs.data;
+        //   storageService.updateLocalAccessToken(accessToken);
+        //   return instance(originalConfig);
+        // } catch (_error) {
+        //   return Promise.reject(_error);
+        // }
       }
     }
     return Promise.reject(err);
