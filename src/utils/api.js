@@ -1,7 +1,7 @@
 import axios from "axios";
 import storageService from "../service/storageService";
 const instance = axios.create({
-  baseURL: process.env.API_ENDPOINT,
+  baseURL: process.env.API_ENDPOINT || "http://localhost:5000",
   headers: {
     "Content-Type": "application/json",
   },
