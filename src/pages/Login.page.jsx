@@ -12,7 +12,7 @@ function LoginPage() {
         <div className='flex'>
 
             {/* login right section  */}
-            <div className='w-9/12 h-screen bg-gray-100 md:flex items-center justify-center flex-col  hidden md:visible  '>
+            <div className='w-9/12 h-screen bg-lime-100 md:flex items-center justify-center flex-col  hidden md:visible  '>
                 <img src={Logo} width="180" alt="" className='absolute top-10 left-14' />
                 <img src={LoginImage} className="h-full w-full" style={{ objectFit: 'cover' }} alt="" />
             </div>
@@ -35,7 +35,7 @@ function LoginPage() {
                     </div>
 
                     <div className='mt-5'>
-                        <input type={"submit"} className="bg-lime-400 text-black px-36 py-3 rounded-xl" />
+                        <input type={"submit"} className="bg-lime-400 text-black px-36 py-3 rounded-xl" value={"Login"} />
                     </div>
                     {/* 
                     <div className='flex w-full items-center justify-center'  >
