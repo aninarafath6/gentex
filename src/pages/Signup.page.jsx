@@ -34,7 +34,7 @@ function SignUp() {
 
                     <div>
                         <label className='block mt-4'>Aadhar Number</label>
-                        <input type={"text"} placeholder="Enter your aadhar Number" className=' text-slate-600 focus:border-red-400-500  w-full px-3 placeholder:text-slate-400 rounded-xl py-3 mt-2 border border-grey' />
+                        <input type={"text"} placeholder="Enter your aadhar number" className=' text-slate-600 focus:border-red-400-500  w-full px-3 placeholder:text-slate-400 rounded-xl py-3 mt-2 border border-grey' />
                     </div>
 
                     <div>

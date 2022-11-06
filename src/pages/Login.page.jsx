@@ -37,24 +37,14 @@ function LoginPage() {
                     <div className='mt-5'>
                         <input type={"submit"} className="bg-lime-400 text-black px-36 py-3 rounded-xl" value={"Login"} />
                     </div>
-                    {/* 
-                    <div className='flex w-full items-center justify-center'  >
-                        <hr className='h-2 mt-9 w-full' />
-                        <p>Or</p>
-                    </div> */}
 
                 </form>
-
                 <button className='mt-4 bg-white border  py-3 px-20 items-center justify-center text-gray-600 font-medium rounded-xl flex  gap-3'>
                     <img src={GoogleIcon} width='30' alt="" />
                     <p>Sign in with google</p>
                 </button>
 
             </div>
-
-
-
-
         </div>
     )
 }
